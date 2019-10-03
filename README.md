@@ -3,6 +3,8 @@
 <details>
            <summary> Setup </summary>
            <p>
+                      
+- Determine postgres username in CLI with ```psql```
 
 - Update /config/config.json with
 
@@ -11,7 +13,7 @@
 |"dialect":    | "postgres"   |
 |"username":   | "<your_username>"|
 
-- Determine postgres username in CLI with ```psql```
+
 
 - $ npx sequelize db:create
 
@@ -20,7 +22,13 @@
 
 <details>
            <summary> Run Application Locally </summary>
-           <p>```npm start```</p>
+           <p>
+                      
+                      
+                      ```npm start```
+                      
+            
+           </p>
 </details>
 
 <details>
