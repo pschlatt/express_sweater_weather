@@ -1,13 +1,15 @@
-#How To:
+# How To:
 
 ## Setup
 
 - Determine postgres username in CLI with ```psql```
 
 - Update /config/config.json with
+```
 ------------- | -------------
 "dialect":    | "postgres"
 "username":   | "<your_username>"
+```
 
 - $ npx sequelize db:create
 
