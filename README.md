@@ -25,10 +25,8 @@
            <p>
                       
                       
-                      ```npm start```
-                      
-            
-           </p>
+                      ```npm start``` 
+</p>
 </details>
 
 <details>
