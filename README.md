@@ -1,8 +1,8 @@
 # How To:
 
-## Setup
-
-- Determine postgres username in CLI with ```psql```
+<details>
+           <summary>## Setup </summary>
+           <p>- Determine postgres username in CLI with ```psql```
 
 - Update /config/config.json with
 
@@ -14,7 +14,12 @@
 
 - $ npx sequelize db:create
 
-- $ npx sequelize db:migrate
+- $ npx sequelize db:migrate</p>
+</details>
+
+
+
+
 
 ## Run Application Locally
 
