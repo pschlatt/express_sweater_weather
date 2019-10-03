@@ -1,6 +1,12 @@
 # How To:
 
 ## Setup
+```
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+```
 
 - Determine postgres username in CLI with ```psql```
 
