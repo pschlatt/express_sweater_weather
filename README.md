@@ -1,22 +1,16 @@
 # How To:
 
 ## Setup
-```
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
-```
 
 - Determine postgres username in CLI with ```psql```
 
 - Update /config/config.json with
-```
-Provided      | Fill With
-------------- | -------------
-"dialect":    | "postgres"
-"username":   | "<your_username>"
-```
+
+|Provided      | Fill With    |
+|------------- | -------------
+|"dialect":    | "postgres"   |
+|"username":   | "<your_username>"|
+
 
 - $ npx sequelize db:create
 
