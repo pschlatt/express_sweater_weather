@@ -3,7 +3,6 @@
 <details>
            <summary> Setup </summary>
            <p>
-- Determine postgres username in CLI with ```psql```
 
 - Update /config/config.json with
 
