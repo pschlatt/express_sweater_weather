@@ -25,7 +25,7 @@
 <summary> Run Application Locally </summary>
 <p>
 
-```npm start``` 
+```$ npm start``` 
 </p>
 </details>
 
@@ -33,7 +33,7 @@
 <summary> Run Tests </summary>
 <p>
            
-```npm test```
+```$ npm test```
 </p>
 </details>
 
