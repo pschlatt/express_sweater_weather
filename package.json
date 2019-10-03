@@ -6,6 +6,9 @@
     "start": "node ./bin/www",
     "test": "jest --watch"
   },
+  "engines": {
+    "node": "10.16.3"
+  },
   "dependencies": {
     "@babel/core": "^7.6.2",
     "babel-core": "^7.0.0-bridge.0",
