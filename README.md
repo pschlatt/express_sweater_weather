@@ -21,11 +21,10 @@
 </details>
 
 <details>
-           <summary> Run Application Locally </summary>
-           <p>
-                      
-                      
-                      ```npm start``` 
+<summary> Run Application Locally </summary>
+<p>
+
+```npm start``` 
 </p>
 </details>
 
