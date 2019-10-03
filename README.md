@@ -6,6 +6,7 @@
 
 - Update /config/config.json with
 ```
+Provided      | Fill With
 ------------- | -------------
 "dialect":    | "postgres"
 "username":   | "<your_username>"
