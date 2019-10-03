@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         isEmail:true
       },
-      unique: {
+      unique: { //not producing error 
           args: true,
           msg: 'This email is already being used.'
       }
