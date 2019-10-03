@@ -11,6 +11,7 @@
 |"dialect":    | "postgres"   |
 |"username":   | "<your_username>"|
 
+- Determine postgres username in CLI with ```psql```
 
 - $ npx sequelize db:create
 
