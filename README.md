@@ -1,7 +1,7 @@
-# How To:
+# Express Sweater Weather:
 
 <details>
-           <summary>## Setup </summary>
+           <summary> Setup </summary>
            <p>- Determine postgres username in CLI with ```psql```
 
 - Update /config/config.json with
@@ -17,18 +17,16 @@
 - $ npx sequelize db:migrate</p>
 </details>
 
+<details>
+           <summary> Run Application Locally </summary>
+           <p>```npm start```</p>
+</details>
 
+<details>
+           <summary> Run Tests </summary>
+           <p>```npm test```</p>
+</details>
 
-
-
-## Run Application Locally
-
-npm start
-
-## Run Tests
-
-npm test
-
-# Author(s)
+## Author(s)
 
 Paul Schlattmann
