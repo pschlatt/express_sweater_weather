@@ -21,6 +21,11 @@ var pass = {
   password_confirmation: '1234'
 };
 
+var unsuccessful = {
+  password: '1234',
+  password_confirmation: '1234'
+};
+
 var passwords_do_not_match = {
   email: 'paul.h.schlattmann@gmail.com',
   password: 'abc',
@@ -67,5 +72,12 @@ describe('POST /api/v1/users', () => {
     const res = await request(app).post('/api/v1/users').send(passwords_do_not_match);
     expect(res.statusCode).toEqual(400);
     expect(res.body).toEqual(JSON.parse('{"err_message": "Password and Password Confirmaiton must match"}'));
+  });
+});
+
+describe('POST /api/v1/users', () => {
+  test("Unsuccessful user store", async () => {
+    const res = await request(app).post('/api/v1/users').send(unsuccessful);
+    expect(res.statusCode).toEqual(500);
   });
 });
