@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var api_gen = require('secure-random-string');
 const bcrypt = require('bcrypt');
-// var salt = bcrypt.genSaltSync(10)
 var User = require('../../../models').User;
 
 
