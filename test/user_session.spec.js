@@ -39,36 +39,14 @@ describe('POST /api/v1/sessions', () => {
   test('Is successful', async () => {
     const res = await request(app).post('/api/v1/sessions').send(pass);
     expect(res.statusCode).toEqual(200);
+    expect(Object.keys(res.body)).toContain('api_key');
   });
 });
 
-describe('POST /api/v1/users', () => {
-  test('No Email', async () => {
-    const res = await request(app).post('/api/v1/users').send(no_email);
-    expect(res.statusCode).toEqual(400);
-    expect(res.body).toEqual(JSON.parse('{"err_message": "Email cannot be empty"}'));
-  });
-});
-
-describe('POST /api/v1/users', () => {
-  test('No Password', async () => {
-    const res = await request(app).post('/api/v1/users').send(no_password);
-    expect(res.statusCode).toEqual(400);
-    expect(res.body).toEqual(JSON.parse('{"err_message": "password cannot be empty"}'));
-  });
-});
-
-describe('POST /api/v1/users', () => {
-  test("Passwords don't match", async () => {
-    const res = await request(app).post('/api/v1/users').send(passwords_do_not_match);
-    expect(res.statusCode).toEqual(400);
-    expect(res.body).toEqual(JSON.parse('{"err_message": "Password and Password Confirmaiton must match"}'));
-  });
-});
-
-describe('POST /api/v1/users', () => {
-  test("Unsuccessful user store", async () => {
-    const res = await request(app).post('/api/v1/users').send(unsuccessful);
-    expect(res.statusCode).toEqual(500);
-  });
-});
+// describe('POST /api/v1/users', () => {
+//   test('No Email', async () => {
+//     const res = await request(app).post('/api/v1/users').send(no_email);
+//     expect(res.statusCode).toEqual(400);
+//     expect(res.body).toEqual(JSON.parse('{"err_message": "Email cannot be empty"}'));
+//   });
+// });
