@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var api_gen = require('secure-random-string');
 const bcrypt = require('bcrypt');
-var salt = bcrypt.genSaltSync(10)
+// var salt = bcrypt.genSaltSync(10)
 var User = require('../../../models').User;
 
 
@@ -32,7 +32,7 @@ router.post('/', function(req, res, next) {
   else {
     User.create({
       email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, salt),
+      password: bcrypt.hashSync(req.body.password, 10),
       api_key: api_gen()
     })
       .then(
@@ -44,7 +44,7 @@ router.post('/', function(req, res, next) {
       })
       .catch(
       error => {
-        res.status(404)
+        res.status(500).send(error)
       }
       )
   }

@@ -2,35 +2,82 @@ var shell = require('shelljs');
 var request = require("supertest");
 var app = require('../app');
 
-
 describe('api', () => {
   beforeAll(() => {
-    shell.exec('npx sequelize db:create')
+    shell.exec('npx sequelize db:create --env test')
   });
   beforeEach(() => {
-      shell.exec('npx sequelize db:migrate')
-      shell.exec('npx sequelize db:seed:all')
+      shell.exec('npx sequelize db:migrate --env test')
+      shell.exec('npx sequelize db:seed:all --env test')
     });
   afterEach(() => {
-    shell.exec('npx sequelize db:migrate:undo:all')
+    shell.exec('npx sequelize db:migrate:undo:all --env test')
   });
 });
 
+var pass = {
+  email: 'paul.h.schlattmann@gmail.com',
+  password: '1234',
+  password_confirmation: '1234'
+};
 
-describe('Successful and Unsuccessful account creation.', () => {
-    test('Successful', () => {
-      var input = {
-        email: 'paul.h.schlattmann@gmail.com',
-        password: '1234',
-        password_confirmation: '1234'
-      };
-       return request(app)
-        .post('/api/v1/users')
-        .send(input)
-        .then(response => {
-            expect(response.status).toBe(201);
-            expect(Object.keys(response.body)).toContain('api_key');
-          }
-      );
+var unsuccessful = {
+  password: '1234',
+  password_confirmation: '1234'
+};
+
+var passwords_do_not_match = {
+  email: 'paul.h.schlattmann@gmail.com',
+  password: 'abc',
+  password_confirmation: '1234'
+};
+
+var no_password = {
+  email: 'paul.h.schlattmann@gmail.com',
+  password: '',
+  password_confirmation: '1234'
+};
+
+var no_email = {
+  email: '',
+  password: '1234',
+  password_confirmation: '1234'
+};
+
+describe('POST /api/v1/users', () => {
+  test('Is successful', async () => {
+    const res = await request(app).post('/api/v1/users').send(pass);
+    expect(res.statusCode).toEqual(201);
   });
-})
+});
+
+describe('POST /api/v1/users', () => {
+  test('No Email', async () => {
+    const res = await request(app).post('/api/v1/users').send(no_email);
+    expect(res.statusCode).toEqual(400);
+    expect(res.body).toEqual(JSON.parse('{"err_message": "Email cannot be empty"}'));
+  });
+});
+
+describe('POST /api/v1/users', () => {
+  test('No Password', async () => {
+    const res = await request(app).post('/api/v1/users').send(no_password);
+    expect(res.statusCode).toEqual(400);
+    expect(res.body).toEqual(JSON.parse('{"err_message": "password cannot be empty"}'));
+  });
+});
+
+describe('POST /api/v1/users', () => {
+  test("Passwords don't match", async () => {
+    const res = await request(app).post('/api/v1/users').send(passwords_do_not_match);
+    expect(res.statusCode).toEqual(400);
+    expect(res.body).toEqual(JSON.parse('{"err_message": "Password and Password Confirmaiton must match"}'));
+  });
+});
+
+describe('POST /api/v1/users', () => {
+  test("Unsuccessful user store", async () => {
+    const res = await request(app).post('/api/v1/users').send(unsuccessful);
+    expect(res.statusCode).toEqual(500);
+  });
+});
