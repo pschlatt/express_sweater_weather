@@ -3,7 +3,7 @@
 <summary> Project Digest </summary>
 <p>
 
-This project is an introduction to building an Express API using JavaScript and NodeJS.  I wrote a very similar project that contains the same endpoints, but it was written in RoR.  Express Sweater Weather was an opportunity to adapt my fundamental programming knowledge from Ruby to Javascript using NodeJS.
+This project is an introduction to building an Express API using JavaScript and NodeJS.  I wrote a very similar project that contains the same endpoints, but was written in RoR.  Express Sweater Weather was an opportunity to adapt my fundamental programming knowledge of Ruby to Javascript using NodeJS.
 
 Additional Goals:
 
