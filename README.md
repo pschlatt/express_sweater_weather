@@ -1,5 +1,5 @@
 # Express Sweater Weather:
-![coverage](https://img.shields.io/badge/coverage-98%25-brightgreen
+![coverage](https://img.shields.io/badge/coverage-98%25-brightgreen)
 <details>
 <summary> Project Digest </summary>
 <p>
