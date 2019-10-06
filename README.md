@@ -30,7 +30,7 @@
 </details>
 
 <details>
-<summary> Run Tests </summary>
+<summary> Run Tests & Coverage </summary>
 <p>
            
 ```$ npm test```
