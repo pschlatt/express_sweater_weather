@@ -35,7 +35,9 @@ router.post('/', function(req, res, next) {
                     api_key: user.api_key
                     })
               else
-                res.status(401).send("Incorrect Email or password")
+                res.status(401).send(response = {
+                  err_message: "Incorrect Email or Password"
+                })
           }
         )
       }
