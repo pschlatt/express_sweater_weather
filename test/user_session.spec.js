@@ -44,6 +44,8 @@ describe('POST /api/v1/sessions', () => {
     const res = await request(app).post('/api/v1/sessions').send(pass);
     expect(res.statusCode).toEqual(200);
     expect(Object.keys(res.body)).toContain('api_key');
+    expect(res.body.api_key.length).toBe(32);
+    expect(res.body.api_key.constructor.name).toBe("String")
   });
 });
 
