@@ -40,6 +40,13 @@ router.post('/', function(req, res, next) {
                 })
           }
         )
+        .catch(user =>
+          {
+            res.status(401).send(response = {
+              err_message: "Incorrect Email or Password"
+            })
+          }
+        )
       }
 })
 
