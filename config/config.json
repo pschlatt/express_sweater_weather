@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "paul",
+    "username": "paulschlattmann",
     "password": null,
     "database": "express_sweater_weather_development",
     "host": "127.0.0.1",
@@ -8,7 +8,7 @@
     "operatorsAliases": false
   },
   "test": {
-    "username": "paul",
+    "username": "paulschlattmann",
     "password": null,
     "database": "express_sweater_weather_test",
     "host": "127.0.0.1",
